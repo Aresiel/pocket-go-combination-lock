@@ -5,6 +5,7 @@
 int main(int argc, char* argv[])
 {
     int done = 0;
+    int step = 0;
     SDL_Surface *tmp, *screen;
     
     SDL_Init( SDL_INIT_VIDEO );
@@ -12,7 +13,7 @@ int main(int argc, char* argv[])
     SDL_ShowCursor(0);
     screen = SDL_SetVideoMode(320, 240, 16, SDL_HWSURFACE);
     tmp = SDL_LoadBMP("assets/bg.bmp");
-    
+
     while(!done)
     {
         Uint8 *keystate = SDL_GetKeyState(NULL);
@@ -27,8 +28,29 @@ int main(int argc, char* argv[])
                     case SDLK_RETURN:
                     // Just pressed down Start
                     break;
+                    case SDLK_UP:
+                    	step = 1;
+                    break;
+                    case SDLK_DOWN:
+                    	if(step == 3){
+                    		done = 1;
+                    	} else {
+                    		step = 0;
+                    	}
+                    break;
                     case SDLK_LEFT:
-						done = 1;
+						if(step == 2) {
+							step++;
+						} else {
+							step = 0;
+						}
+                    break;
+                    case SDLK_RIGHT:
+						if(step == 1){
+							step++;
+						} else {
+							step = 0;
+						}
                     break;
                 }
                 break;
