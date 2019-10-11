@@ -7,7 +7,7 @@ Not complete, you gotta make it ~~start on boot or something not 100% sure~~. Ye
 The code is **UP RIGHT LEFT DOWN** by default, there is no way to change it except editing the code but that is quite easy to do, the trick is compiling... Ask some dudes [here](https://discord.gg/WkYGcVQ) for help with that.
 
 ### IMPORTANT - NOT TESTED
-I have not tested this as my device hasen't arrived yet.
+I have not tested this as my device hasn't arrived yet.
 
 ### Thanks
  - FLG82
