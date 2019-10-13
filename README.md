@@ -8,6 +8,7 @@ The code is **UP RIGHT LEFT DOWN** by default, there is ~~no way to change it ex
 You still need to edit the code and recompile but the combination is now stored in an array so you can change and add whatever you want too to that, just remember to update the array size.
 
 The available keys are
+
 | **Key**     | **Key Code**   |
 |-------------|----------------|
 | Up          | SDLK_UP        |
