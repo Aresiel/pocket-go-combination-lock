@@ -7,8 +7,22 @@ Not complete, you gotta make it ~~start on boot or something not 100% sure~~. Ye
 The code is **UP RIGHT LEFT DOWN** by default, there is ~~no way to change it except editing the code but that is quite easy to do~~, the trick is compiling... Ask some dudes [here](https://discord.gg/WkYGcVQ) for help with that.
 You still need to edit the code and recompile but the combination is now stored in an array so you can change and add whatever you want too to that, just remember to update the array size.
 
-The availabe keys are:
-add this
+The available keys are
+| **Key**     | **Key Code**   |
+|-------------|----------------|
+| Up          | SDLK_UP        |
+| Down        | SDLK_DOWN      |
+| Left        | SDLK_LEFT      |
+| Right       | SDLK_RIGHT     |
+| B (Y)       | SDLK_SPACE     |
+| A (B)       | SDLK_LCTRL     |
+| TB (X)      | SDLK_LSHIFT    |
+| TA (A)      | SDLK_LALT      |
+| START+A (R) | SDLK_TAB       |
+| START+B (L) | SDLK_BACKSPACE |
+| SELECT      | SDLK_ESCAPE    |
+| START       | SDLK_RETURN    |
+| R           | SDLK_RCTRL     |
 
 ### IMPORTANT - NOT TESTED
 I have not tested this as my device hasn't arrived yet.
