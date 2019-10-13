@@ -5,7 +5,6 @@
 int main(int argc, char* argv[])
 {
     int done = 0;
-    int step = 0;
     SDL_Surface *tmp, *screen;
     
     SDL_Init( SDL_INIT_VIDEO );
@@ -14,6 +13,11 @@ int main(int argc, char* argv[])
     screen = SDL_SetVideoMode(320, 240, 16, SDL_HWSURFACE);
     tmp = SDL_LoadBMP("assets/bg.bmp");
 
+	
+	SDLKey Combination[4] = {SDLK_UP, SDLK_RIGHT, SDLK_LEFT, SDLK_DOWN};
+	int CombPoint = 0;
+	int CombinationSize = sizeof(Combination)/sizeof(Combination[0]);
+	
     while(!done)
     {
         Uint8 *keystate = SDL_GetKeyState(NULL);
@@ -23,19 +27,33 @@ int main(int argc, char* argv[])
             switch (event.type)
             {
                 case SDL_KEYDOWN:
-                switch(event.key.keysym.sym)
+
+				if(event.key.keysym.sym == Combination[CombPoint]) {
+					CombPoint++;
+				} else {
+					CombPoint = 0;
+				}
+				if(CombPoint > CombinationSize-1){
+					done = 1;
+				}
+                
+                /*switch(event.key.keysym.sym)
                 {
                     case SDLK_RETURN:
                     // Just pressed down Start
                     break;
                     case SDLK_UP:
-                    	step = 1;
+                    	if(Combination[CombPoint] == SDLK_UP){
+                    		CombPoint++;
+                    	} else {
+                    		CombPoint = 0;
+                    	}
                     break;
                     case SDLK_DOWN:
-                    	if(step == 3){
-                    		done = 1;
+                    	if(Combination[CombPoint] == SDLK_DOWN){
+                    		CombPoint++;
                     	} else {
-                    		step = 0;
+                    		CombPoint = 0;
                     	}
                     break;
                     case SDLK_LEFT:
@@ -52,7 +70,7 @@ int main(int argc, char* argv[])
 							step = 0;
 						}
                     break;
-                }
+                }*/
                 break;
                 case SDL_KEYUP:
                 switch(event.key.keysym.sym)
